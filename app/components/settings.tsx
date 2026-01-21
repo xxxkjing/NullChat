@@ -32,7 +32,6 @@ import { ModelConfigList } from "./model-config";
 
 import { IconButton } from "./button";
 import {
-  SubmitKey,
   useChatStore,
   Theme,
   useUpdateStore,
@@ -46,8 +45,7 @@ import Locale, {
   changeLang,
   getLang,
 } from "../locales";
-import { copyToClipboard, clientUpdate, semverCompare } from "../utils";
-import Link from "next/link";
+import { copyToClipboard, semverCompare } from "../utils";
 import {
   Anthropic,
   Azure,
@@ -79,8 +77,6 @@ import { useSyncStore } from "../store/sync";
 import { nanoid } from "nanoid";
 import { useMaskStore } from "../store/mask";
 import { ProviderType } from "../utils/cloud";
-import { TTSConfigList } from "./tts-config";
-import { RealtimeConfigList } from "./realtime-chat/realtime-config";
 import { ModelSelectorModal } from "./model-selector-modal";
 
 function EditPromptModal(props: { id: string; onClose: () => void }) {
@@ -1437,57 +1433,8 @@ export function Settings() {
       </div>
       <div className={styles["settings"]}>
         <List>
-          <ListItem
-            title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
-            subTitle={
-              checkingUpdate
-                ? Locale.Settings.Update.IsChecking
-                : hasNewVersion
-                ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
-                : Locale.Settings.Update.IsLatest
-            }
-          >
-            {checkingUpdate ? (
-              <LoadingIcon />
-            ) : hasNewVersion ? (
-              clientConfig?.isApp ? (
-                <IconButton
-                  icon={<ResetIcon></ResetIcon>}
-                  text={Locale.Settings.Update.GoToUpdate}
-                  onClick={() => clientUpdate()}
-                />
-              ) : (
-                <Link href={updateUrl} target="_blank" className="link">
-                  {Locale.Settings.Update.GoToUpdate}
-                </Link>
-              )
-            ) : (
-              <IconButton
-                icon={<ResetIcon></ResetIcon>}
-                text={Locale.Settings.Update.CheckUpdate}
-                onClick={() => checkUpdate(true)}
-              />
-            )}
-          </ListItem>
-
-          <ListItem title={Locale.Settings.SendKey}>
-            <Select
-              aria-label={Locale.Settings.SendKey}
-              value={config.submitKey}
-              onChange={(e) => {
-                updateConfig(
-                  (config) =>
-                    (config.submitKey = e.target.value as any as SubmitKey),
-                );
-              }}
-            >
-              {Object.values(SubmitKey).map((v) => (
-                <option value={v} key={v}>
-                  {v}
-                </option>
-              ))}
-            </Select>
-          </ListItem>
+          {/* 版本显示已隐藏 */}
+          {/* 发送键已隐藏 */}
 
           <ListItem title={Locale.Settings.Theme}>
             <Select
@@ -1543,22 +1490,7 @@ export function Settings() {
             ></InputRange>
           </ListItem>
 
-          <ListItem
-            title={Locale.Settings.FontFamily.Title}
-            subTitle={Locale.Settings.FontFamily.SubTitle}
-          >
-            <input
-              aria-label={Locale.Settings.FontFamily.Title}
-              type="text"
-              value={config.fontFamily}
-              placeholder={Locale.Settings.FontFamily.Placeholder}
-              onChange={(e) =>
-                updateConfig(
-                  (config) => (config.fontFamily = e.currentTarget.value),
-                )
-              }
-            ></input>
-          </ListItem>
+          {/* 聊天字体已隐藏 */}
 
           <ListItem
             title={Locale.Settings.AutoGenerateTitle.Title}
@@ -1628,124 +1560,18 @@ export function Settings() {
         </List>
 
         <List>
-          <ListItem
-            title={Locale.Settings.EnableModelSearch}
-            subTitle={Locale.Settings.EnableModelSearchSubTitle}
-          >
-            <input
-              type="checkbox"
-              checked={config.enableModelSearch}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.enableModelSearch = e.currentTarget.checked),
-                )
-              }
-            />
-          </ListItem>
-
-          <ListItem
-            title={Locale.Settings.EnableThemeChange.Title}
-            subTitle={Locale.Settings.EnableThemeChange.SubTitle}
-          >
-            <input
-              type="checkbox"
-              checked={config.enableThemeChange}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.enableThemeChange = e.currentTarget.checked),
-                )
-              }
-            />
-          </ListItem>
-
-          <ListItem
-            title={Locale.Settings.EnablePromptHints.Title}
-            subTitle={Locale.Settings.EnablePromptHints.SubTitle}
-          >
-            <input
-              type="checkbox"
-              checked={config.enablePromptHints}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.enablePromptHints = e.currentTarget.checked),
-                )
-              }
-            />
-          </ListItem>
-
-          <ListItem
-            title={Locale.Settings.EnableClearContext.Title}
-            subTitle={Locale.Settings.EnableClearContext.SubTitle}
-          >
-            <input
-              type="checkbox"
-              checked={config.enableClearContext}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.enableClearContext = e.currentTarget.checked),
-                )
-              }
-            />
-          </ListItem>
-
-          <ListItem
-            title={Locale.Settings.EnableShortcuts.Title}
-            subTitle={Locale.Settings.EnableShortcuts.SubTitle}
-          >
-            <input
-              type="checkbox"
-              checked={config.enableShortcuts}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.enableShortcuts = e.currentTarget.checked),
-                )
-              }
-            />
-          </ListItem>
+          {/* 模型搜索已隐藏 */}
+          {/* 启用主题切换已隐藏 */}
+          {/* 提示词补全已隐藏 */}
+          {/* 清除聊天已隐藏 */}
+          {/* 快捷键已隐藏 */}
         </List>
 
-        <SyncItems />
+        {/* WebDAV相关已隐藏 */}
 
         <List>
-          <ListItem
-            title={Locale.Settings.Mask.Splash.Title}
-            subTitle={Locale.Settings.Mask.Splash.SubTitle}
-          >
-            <input
-              aria-label={Locale.Settings.Mask.Splash.Title}
-              type="checkbox"
-              checked={!config.dontShowMaskSplashScreen}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.dontShowMaskSplashScreen =
-                      !e.currentTarget.checked),
-                )
-              }
-            ></input>
-          </ListItem>
-
-          <ListItem
-            title={Locale.Settings.Mask.Builtin.Title}
-            subTitle={Locale.Settings.Mask.Builtin.SubTitle}
-          >
-            <input
-              aria-label={Locale.Settings.Mask.Builtin.Title}
-              type="checkbox"
-              checked={config.hideBuiltinMasks}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.hideBuiltinMasks = e.currentTarget.checked),
-                )
-              }
-            ></input>
-          </ListItem>
+          {/* 面具启动页已隐藏 */}
+          {/* 隐藏内置面具已隐藏 */}
         </List>
 
         <List>
@@ -1832,31 +1658,7 @@ export function Settings() {
             </>
           )}
 
-          {!shouldHideBalanceQuery && !clientConfig?.isApp ? (
-            <ListItem
-              title={Locale.Settings.Usage.Title}
-              subTitle={
-                showUsage
-                  ? loadingUsage
-                    ? Locale.Settings.Usage.IsChecking
-                    : Locale.Settings.Usage.SubTitle(
-                        usage?.used ?? "[?]",
-                        usage?.subscription ?? "[?]",
-                      )
-                  : Locale.Settings.Usage.NoAccess
-              }
-            >
-              {!showUsage || loadingUsage ? (
-                <div />
-              ) : (
-                <IconButton
-                  icon={<ResetIcon></ResetIcon>}
-                  text={Locale.Settings.Usage.Check}
-                  onClick={() => checkUsage(true)}
-                />
-              )}
-            </ListItem>
-          ) : null}
+          {/* 余额查询已隐藏 */}
 
           {customModelsComponent}
         </List>
@@ -1875,28 +1677,8 @@ export function Settings() {
         {shouldShowPromptModal && (
           <UserPromptModal onClose={() => setShowPromptModal(false)} />
         )}
-        <List>
-          <RealtimeConfigList
-            realtimeConfig={config.realtimeConfig}
-            updateConfig={(updater) => {
-              const realtimeConfig = { ...config.realtimeConfig };
-              updater(realtimeConfig);
-              config.update(
-                (config) => (config.realtimeConfig = realtimeConfig),
-              );
-            }}
-          />
-        </List>
-        <List>
-          <TTSConfigList
-            ttsConfig={config.ttsConfig}
-            updateConfig={(updater) => {
-              const ttsConfig = { ...config.ttsConfig };
-              updater(ttsConfig);
-              config.update((config) => (config.ttsConfig = ttsConfig));
-            }}
-          />
-        </List>
+        {/* 实时聊天配置已隐藏 */}
+        {/* 语音转文本配置已隐藏 */}
 
         <DangerItems />
 

@@ -4,7 +4,6 @@ import Locale from "./locales";
 import { RequestMessage } from "./client/api";
 // import { fetch as tauriFetch, ResponseType } from "@tauri-apps/api/http";
 import { fetch as tauriStreamFetch } from "./utils/stream";
-import { ServiceProvider } from "./constant";
 
 export function trimTopic(topic: string) {
   // Fix an issue where double quotes still show in the Indonesian language
@@ -300,44 +299,8 @@ export function isDalle3(model: string) {
 }
 
 export function showPlugins(providerName?: string, model?: string) {
-  // 始终允许gemini-2.0-flash-exp使用插件（联网功能）
-  if (model === "gemini-2.0-flash-exp") {
-    return true;
-  }
-
-  // 恢复原来的功能，允许特定provider使用插件
-  if (!providerName || !model) return false;
-
-  const provider = providerName as ServiceProvider;
-
-  // 检查模型名称是否包含 deepseek-chat 或 deepseek-v3（不区分大小写）
-  if (
-    model.toLowerCase().includes("deepseek-chat") ||
-    model.toLowerCase().includes("deepseek-v3") ||
-    model.toLowerCase().includes("deepseek-r1") ||
-    model.toLowerCase().includes("deepseek-reasoner")
-  ) {
-    return true;
-  }
-
-  if (
-    provider === ServiceProvider.OpenAI ||
-    provider === ServiceProvider.Azure ||
-    provider === ServiceProvider.Moonshot ||
-    provider === ServiceProvider.ChatGLM
-  ) {
-    return true;
-  }
-
-  if (provider === ServiceProvider.Anthropic && !model.includes("claude-2")) {
-    return true;
-  }
-
-  if (provider === ServiceProvider.Google && !model.includes("vision")) {
-    return true;
-  }
-
-  return false;
+  // 始终显示插件功能，支持所有模型
+  return true;
 }
 
 export function fetch(

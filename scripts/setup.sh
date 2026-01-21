@@ -54,8 +54,8 @@ if ! command -v node >/dev/null || ! command -v git >/dev/null || ! command -v y
 fi
 
 # Clone the repository and install dependencies
-git clone https://github.com/tianzhentech/NeatChat.git
-cd NeatChat
+git clone https://github.com/xxxkjing/NullChat.git
+cd NullChat
 yarn install
 
 # Prompt user for environment variables

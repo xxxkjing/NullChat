@@ -21,10 +21,10 @@ const fontStyleOptimization = `
 `;
 
 export const metadata: Metadata = {
-  title: "NeatChat",
+  title: "NullChat",
   description: "Your personal ChatGPT Chat Bot.",
   appleWebApp: {
-    title: "NeatChat",
+    title: "NullChat",
     statusBarStyle: "default",
   },
 };

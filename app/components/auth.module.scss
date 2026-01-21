@@ -105,4 +105,14 @@
       margin-bottom: 10px;
     }
   }
+
+  .auth-password-input {
+    max-width: 100% !important;
+    width: 100%;
+
+    .password-input {
+      border-bottom: none !important;
+      box-shadow: none !important;
+    }
+  }
 }

@@ -517,9 +517,9 @@ export function ImagePreviewer(props: {
           </div>
 
           <div>
-            <div className={styles["main-title"]}>NeatChat</div>
+            <div className={styles["main-title"]}>NullChat</div>
             <div className={styles["sub-title"]}>
-              github.com/tianzhentech/NeatChat
+              github.com/xxxkjing/NullChat
             </div>
           </div>
           <div>

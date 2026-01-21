@@ -1,9 +1,9 @@
 version: "3.9"
 services:
-  NeatChat:
+  NullChat:
     profiles: [ "no-proxy" ]
-    container_name: NeatChat
-    image: tianzhentech/chatgpt-next-web:latest
+    container_name: NullChat
+    image: xxxkjing/chatgpt-next-web:latest
     ports:
       - 3000:3000
     environment:
@@ -18,10 +18,10 @@ services:
       - DISABLE_FAST_LINK=$DISABLE_FAST_LINK
       - OPENAI_SB=$OPENAI_SB
 
-  NeatChat-proxy:
+  NullChat-proxy:
     profiles: [ "proxy" ]
-    container_name: NeatChat-proxy
-    image: tianzhentech/chatgpt-next-web:latest
+    container_name: NullChat-proxy
+    image: xxxkjing/chatgpt-next-web:latest
     ports:
       - 3000:3000
     environment:

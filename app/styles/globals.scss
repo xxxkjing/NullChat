@@ -403,6 +403,7 @@ pre {
   max-width: 50%;
   display: flex;
   justify-content: flex-end;
+  border-bottom: none;
 
   .password-eye {
     margin-right: 4px;
@@ -410,6 +411,7 @@ pre {
 
   .password-input {
     min-width: 80%;
+    border-bottom: none;
   }
 }
 

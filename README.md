@@ -1,16 +1,16 @@
 <div align="center">
 
 
-![](https://raw.githubusercontent.com/tianzhentech/static/main/images/NeatChat-Dark.svg)
+![](https://raw.githubusercontent.com/xxxkjing/static/main/images/NullChat-Dark.svg)
 
-![Stars](https://img.shields.io/github/stars/tianzhentech/neatchat)
-![Forks](https://img.shields.io/github/forks/tianzhentech/neatchat)
+![Stars](https://img.shields.io/github/stars/xxxkjing/nullchat)
+![Forks](https://img.shields.io/github/forks/xxxkjing/nullchat)
 ![Web](https://img.shields.io/badge/Web-PWA-orange?logo=microsoftedge)
 ![Web](https://img.shields.io/badge/-Windows-blue?logo=windows)
-![Release Badge](https://img.shields.io/github/v/release/tianzhentech/neatchat.svg)
-![License](https://img.shields.io/github/license/tianzhentech/neatchat.svg)
+![Release Badge](https://img.shields.io/github/v/release/xxxkjing/nullchat.svg)
+![License](https://img.shields.io/github/license/xxxkjing/nullchat.svg)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/tianzhentech/NeatChat.git)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/xxxkjing/NullChat.git)
 
 
 
@@ -68,15 +68,15 @@
 
 ## 🖼️ 界面预览
 
-![](https://raw.githubusercontent.com/tianzhentech/static/main/images/%7B326DD837-A2FE-4603-A289-47FD5FED329A%7D.png)
-![](https://raw.githubusercontent.com/tianzhentech/static/main/images/%7B1FB6B249-72D5-42F0-B861-7FE95ADCEEEE%7D.png)
-![](https://raw.githubusercontent.com/tianzhentech/static/main/images/%7B6656232E-09F3-472D-A2B4-621DDD57D9CC%7D.png)
+![](https://raw.githubusercontent.com/xxxkjing/static/main/images/%7B326DD837-A2FE-4603-A289-47FD5FED329A%7D.png)
+![](https://raw.githubusercontent.com/xxxkjing/static/main/images/%7B1FB6B249-72D5-42F0-B861-7FE95ADCEEEE%7D.png)
+![](https://raw.githubusercontent.com/xxxkjing/static/main/images/%7B6656232E-09F3-472D-A2B4-621DDD57D9CC%7D.png)
 
-![](https://raw.githubusercontent.com/tianzhentech/static/main/images/20250312232933.png)
+![](https://raw.githubusercontent.com/xxxkjing/static/main/images/20250312232933.png)
 
-![](https://raw.githubusercontent.com/tianzhentech/static/main/images/20250312223248.png)
+![](https://raw.githubusercontent.com/xxxkjing/static/main/images/20250312223248.png)
 
-![](https://raw.githubusercontent.com/tianzhentech/static/main/images/20250313011331.png)
+![](https://raw.githubusercontent.com/xxxkjing/static/main/images/20250313011331.png)
 
 > 更多内容请移步[演示站](https://nc.tianz.me)
 
@@ -106,9 +106,9 @@
 | SiliconCloud | `siliconcloud`     | Perplexity | `perplexity`     |
 | Stability    | `stability`        | Flux       | `flux`           |
 
-1. 支持vercel一键部署：[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/tianzhentech/NeatChat.git)
+1. 支持vercel一键部署：[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/xxxkjing/NullChat.git)
 
-2. docker只需要替换官方**yidadaa/chatgpt-next-web:版本号**为**tianzhentech/chatgpt-next-web:latest**即可
+2. docker只需要替换官方**yidadaa/chatgpt-next-web:版本号**为**xxxkjing/chatgpt-next-web:latest**即可
 
 > 其余配置与官方一致，详细使用请参考[NextChat](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web)
 
@@ -131,7 +131,7 @@
 | 🚀 火山引擎 | [立即访问](https://volcengine.com/L/i5QyNFSX)       |
 
 
-[![image](https://raw.githubusercontent.com/tianzhentech/static/main/images/20250409181441.png)](https://yxvm.com/)
+[![image](https://raw.githubusercontent.com/xxxkjing/static/main/images/20250409181441.png)](https://yxvm.com/)
 
 [NodeSupport](https://github.com/NodeSeekDev/NodeSupport)赞助了本项目
 
@@ -140,9 +140,9 @@
 <a>
 
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=tianzhentech/NeatChat&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=tianzhentech/NeatChat&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=tianzhentech/NeatChat&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=xxxkjing/NullChat&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=xxxkjing/NullChat&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=xxxkjing/NullChat&type=Date" />
  </picture>
 
 </a>
