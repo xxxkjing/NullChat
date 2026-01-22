@@ -1308,7 +1308,7 @@ export function Settings() {
       </ListItem>
     </>
   );
-  const lflytekConfigComponent = accessStore.provider ===
+  const iflytekConfigComponent = accessStore.provider ===
     ServiceProvider.Iflytek && (
     <>
       <ListItem
@@ -1560,21 +1560,6 @@ export function Settings() {
         </List>
 
         <List>
-          {/* 模型搜索已隐藏 */}
-          {/* 启用主题切换已隐藏 */}
-          {/* 提示词补全已隐藏 */}
-          {/* 清除聊天已隐藏 */}
-          {/* 快捷键已隐藏 */}
-        </List>
-
-        {/* WebDAV相关已隐藏 */}
-
-        <List>
-          {/* 面具启动页已隐藏 */}
-          {/* 隐藏内置面具已隐藏 */}
-        </List>
-
-        <List>
           <ListItem
             title={Locale.Settings.Prompt.Disable.Title}
             subTitle={Locale.Settings.Prompt.Disable.SubTitle}
@@ -1650,7 +1635,7 @@ export function Settings() {
                   {tencentConfigComponent}
                   {moonshotConfigComponent}
                   {stabilityConfigComponent}
-                  {lflytekConfigComponent}
+                  {iflytekConfigComponent}
                   {XAIConfigComponent}
                   {chatglmConfigComponent}
                 </>
